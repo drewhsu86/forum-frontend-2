@@ -23,7 +23,6 @@ export default function LikeButton(props) {
   // because I don't want to do the get call for the thread after
   // doing the post call for /like or /clearLikes
   const liked = props.myVote
-  console.log(liked)
 
   async function handleClick(opt) {
     // I write a click handler that lets you choose 2 options 

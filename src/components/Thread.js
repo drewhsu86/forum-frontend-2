@@ -32,6 +32,9 @@ export function Thread(props) {
           onSubmit={e => {
             e.preventDefault();
             newPost(props.id, newPostContent, username).then(props.refreshThread);
+            // I just have to clear this after my post is submitted 
+            // or else I keep having to deleted it while testing 
+            setNewPostContent('');
           }}
         >
           <div style={{ display: "flex" }}>
