@@ -14,12 +14,18 @@ export function Thread(props) {
         <span className="thread-topic">{props.topic}</span>
       </div>
       <div className="thread-posts">
-        {props.posts.map(post => (
-          <Post
-            content={post.content}
-            author={post.author}
+        {props.posts.map(post => {
+          // snuck in a console.log here 
+          // wanted to see the post ids 
+          // also I'm passing username to Post
+          // 
+          // console.log(post)
+          return <Post
+            username={username}
+            post={post}
+            forceUpdate={props.forceUpdate}
           />
-        ))}
+        })}
       </div>
       {loggedIn && (
         <form
