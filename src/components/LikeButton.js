@@ -49,23 +49,26 @@ export default function LikeButton(props) {
 
   }
 
+  // I used buttons with my icons because I like the appearance 
+  // (even though the app is bare-bones) but the styling can be 
+  // continuously improved as the app is worked on further 
   if (!username) {
     return null
   } else if (liked) {
     return (
       <button onClick={() => handleClick('unlike')}>
-        Cancel your Like/Dislike this post
+        Clear { liked === 1 ? <i class="fas fa-thumbs-up"></i> : <i class="fas fa-thumbs-down"></i>} ?
       </button>
     )
   } else {
     return (
       <span>
         <button onClick={() => handleClick('like')}>
-          Like this post
+          <i class="far fa-thumbs-up"></i>
         </button>
 
         <button onClick={() => handleClick('dislike')}>
-          Dislike this post
+          <i class="far fa-thumbs-down"></i>
         </button>
       </span>
     )
